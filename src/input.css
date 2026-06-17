@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --navy:#0d2340;
+  --navy-deep:#07172b;
+  --gold:#c79b4b;
+  --cream:#f7f3eb;
+  --ink:#213247;
+  --muted:#6c7480;
+  --line:#e7dfd1;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:'Libre Franklin',sans-serif;
+  color:var(--ink);
+  background:#fff;
+}
+
+.serif{font-family:'Source Serif Pro',serif}
+
+.hero-height{min-height:calc(88 * min(var(--vh, 1vh), 1vh))}
+
+.nav-link{position:relative}
+
+.nav-link:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-8px;
+  height:1px;
+  background:var(--gold);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .25s ease;
+}
+
+.nav-link:hover:after,
+.nav-link:focus:after{
+  transform:scaleX(1)
+}
+
+.fade-up{animation:fadeUp .9s ease both}
+
+.delay-1{animation-delay:.15s}
+
+.delay-2{animation-delay:.3s}
+
+.delay-3{animation-delay:.45s}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(18px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+.service-card{transition:transform .25s ease, box-shadow .25s ease}
+
+.service-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 18px 35px rgba(13,35,64,.12)
+}
+
+.focus-ring:focus-visible{
+  outline:3px solid rgba(199,155,75,.45);
+  outline-offset:3px
+}
